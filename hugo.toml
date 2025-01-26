@@ -1,0 +1,56 @@
+baseURL = "/"
+
+title = "Mor ve Yeşil"
+copyright = "Copyright © 2025"
+
+languageCode = "tr-tr"
+DefaultContentLanguage = "tr"
+
+theme = "tokiwa"
+
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+fuse = true
+
+[markup]
+[markup.highlight]
+style = "monokailight"
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+
+[params]
+description = "Bir süre böyle"
+mainSections = ["posts"]
+paginate = 10
+[params.social]
+twitter = "https://x.com/moryesil__"
+instagram = "https://www.instagram.com/moryesil__/"
+
+[menu]
+# Shown in the side menu.
+[[menu.main]]
+identifier = "post"
+name = "Yazılar"
+url = "/posts/"
+weight = 1
+
+[[menu.main]]
+name = "Kategoriler"
+url = "/categories/"
+weight = 2           # Adjust the weight to change the order in the menu
+
+[[menu.main]]
+name = "Etiketler"
+url = "/tags/"
+weight = 3         # Adjust the weight to change the order in the menu
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+# series = "series"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"] # Ensure "HTML" is included for the homepage
+section = ["HTML"]
+taxonomy = ["HTML"]

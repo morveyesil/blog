@@ -1,0 +1,19 @@
+{{ with .Site.Params.Social }}
+  {{ if gt (len .) 0 }}  <!-- Ensure there are items in the social parameters before proceeding -->
+    <div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start {{if gt (len .) 4}}md:flex-col{{end}} max-h-16">
+      {{ range $key, $value := . }}
+        {{ if and $value (not (eq $key "_merge")) }}  <!-- Check that the value is not empty and key is not "_merge" -->
+          <a href="{{ $value }}" target="_blank" class="{{ $key }} icon pl-1 text-eucalyptus-400 hover:text-java-400" title="{{ $key }} link" rel="noopener noreferrer" aria-label="follow on {{ $key }}——Opens in a new window">
+            <div class="fill-current h-8 w-8">
+              {{ with (print "svg/" $key "-line.svg") }}
+                {{ partial . $ }}
+              {{ else }}
+                <!-- Optional: Add a fallback icon or text if SVG is not found -->
+              {{ end }}
+            </div>
+          </a>
+        {{ end }}
+      {{ end }}
+    </div>
+  {{ end }}
+{{ end }}
