@@ -23,6 +23,7 @@ unsafe = true
 description = "Bir süre böyle"
 mainSections = ["posts"]
 paginate = 10
+PostDateFormat = "2006-01-02"
 [params.social]
 twitter = "https://x.com/moryesil__"
 instagram = "https://www.instagram.com/moryesil__/"
