@@ -1,8 +1,8 @@
 ---
 title: "Mesele Mesela"
 date: 2025-02-10
-categories: ["sarki"]
-tags: ["dongu"]
+categories: ["şarkı", "film"]
+tags: ["döngü", "hayat"]
 _build:
   list: 'always'
 ---
