@@ -39,7 +39,7 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public
         cname: moryesil.com
-        publish_branch: gh-pages  # Ensures GitHub triggers the page
+        publish_branch: gh-pages
