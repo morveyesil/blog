@@ -7,16 +7,14 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write  # Required for GitHub Pages deployment
+  contents: write  # Needed for pushing to gh-pages
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4  # Updated to latest version
+        uses: actions/checkout@v4
         with:
           submodules: true
           fetch-depth: 0  # Ensures full repo history for Hugo
@@ -27,7 +25,7 @@ jobs:
           hugo-version: 'latest'
 
       - name: Cache Hugo modules
-        uses: actions/cache@v4  # Updated to latest version
+        uses: actions/cache@v4
         with:
           path: ~/.cache/hugo
           key: ${{ runner.os }}-hugo-${{ hashFiles('**/go.sum') }}
@@ -37,18 +35,11 @@ jobs:
       - name: Build site with future posts
         run: hugo --minify -F
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3  # Updated to latest version
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: ./public
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2  # Updated to latest version
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          cname: moryesil.com  # If you're using a custom domain
+          force_orphan: true  # Ensures a clean gh-pages branch
