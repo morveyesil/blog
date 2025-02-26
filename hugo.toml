@@ -29,7 +29,7 @@ mainSections = ["posts"]
 paginate = 10
 PostDateFormat = "2006-01-02"
 [params.social]
-twitter = "https://x.com/moryesil__"
+twitter = "https://x.com/moryesil_com"
 instagram = "https://www.instagram.com/moryesil__/"
 
 [menu]
@@ -57,5 +57,3 @@ tag = "tags"
 
 [outputs]
 home = ["HTML", "RSS", "JSON"] # Ensure "HTML" is included for the homepage
-section = ["HTML"]
-taxonomy = ["HTML"]
