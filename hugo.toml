@@ -4,6 +4,7 @@ title = "Mor ve Yeşil"
 copyright = "Copyright © 2025"
 
 googleAnalytics = "G-TH893QK3RY"
+env = "production"
 
 languageCode = "tr-tr"
 DefaultContentLanguage = "tr"
