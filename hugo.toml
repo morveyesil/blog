@@ -4,7 +4,7 @@ title = "Mor ve Yeşil"
 copyright = "Copyright © 2025"
 
 googleAnalytics = "G-TH893QK3RY"
-env = "production"
+
 
 languageCode = "tr-tr"
 DefaultContentLanguage = "tr"
@@ -28,6 +28,7 @@ description = "Bir süre böyle"
 mainSections = ["posts"]
 paginate = 10
 PostDateFormat = "2006-01-02"
+env = "production"
 [params.social]
 twitter = "https://x.com/moryesil_com"
 instagram = "https://www.instagram.com/moryesil__/"
